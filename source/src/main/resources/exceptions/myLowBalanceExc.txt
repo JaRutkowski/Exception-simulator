@@ -1,0 +1,68 @@
+public class MyLowBalanceException extends Exception {
+
+	private static final long serialVersionUID = -1068200676081861731L;
+
+	private static int accno[] = { 1001, 1002, 1003, 1004 };
+
+	private static String name[] = { "Nish", "Shubh", "Sush", "Abhi", "Akash" };
+
+	private static double bal[] = { 10000.00, 12000.00, 5600.0, 999.00, 1100.55 };
+
+	MyLowBalanceException(String str) {
+		super(str);
+	}
+
+	public static void main(String[] args) throws MyLowBalanceException {
+		System.out.println("ACCNO" + "\t" + "CUSTOMER" + "\t" + "BALANCE");
+
+		for (int i = 0; i < 5; i++) {
+			System.out.println(accno[i] + "\t" + name[i] + "\t" + bal[i]);
+
+			if (bal[i] < 1000)
+				throw new MyLowBalanceException("Balance is less than 1000");
+		}
+	}
+
+}
+----ACCNO		CUSTOMER		BALANCE
+1001		Nish		10000.0
+1002		Shubh		12000.0
+1003		Sush		5600.0
+1004		Abhi		999.0
+----public class MyLowBalanceException extends Exception {
+
+	private static final long serialVersionUID = -1068200676081861731L;
+
+	private static int accno[] = { 1001, 1002, 1003, 1004 };
+
+	private static String name[] = { "Nish", "Shubh", "Sush", "Abhi", "Akash" };
+
+	private static double bal[] = { 10000.00, 12000.00, 5600.0, 999.00, 1100.55 };
+
+	MyLowBalanceException(String str) {
+		super(str);
+	}
+
+	public static void main(String[] args) {
+		try {
+			System.out.println("ACCNO" + "\t" + "CUSTOMER" + "\t" + "BALANCE");
+
+			for (int i = 0; i < 5; i++) {
+				System.out.println(accno[i] + "\t" + name[i] + "\t" + bal[i]);
+
+				if (bal[i] < 1000)
+					throw new MyLowBalanceException("Balance is less than 1000");
+			}
+		} catch (MyLowBalanceException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+----ACCNO		CUSTOMER		BALANCE
+1001		Nish		10000.0
+1002		Shubh		12000.0
+1003		Sush		5600.0
+1004		Abhi		999.0
+----com.javafee.tmp.MyLowBalanceException: Balance is less than 1000
+	at MyLowBalanceException.main(MyLowBalanceException.java:25)

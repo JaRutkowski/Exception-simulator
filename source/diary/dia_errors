@@ -1,0 +1,5 @@
+	[] 			P1 C-
+	[]		 	#1 com.javafee.excsim.ExceptionSimulator: jfxDrawerMenu problem
+					- desc: Problem with jfxDrawerMenu - after opening and closing it seems to be present on the screen (tab pane is not 
+					anable).
+------------------------------------------------------------------------------------------------------------------------------------------------		

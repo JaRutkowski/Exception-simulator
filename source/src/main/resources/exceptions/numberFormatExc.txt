@@ -1,0 +1,28 @@
+public class NumberFormatExceptionTest {
+	public static void main(String args[]) {
+		int num = Integer.parseInt("akki");
+		System.out.println(num);
+	}
+}
+----Exception in thread "main" java.lang.NumberFormatException: For input string: "akki"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at NumberFormatExceptionTest.main(Main.java:3)
+----public class ArithmeticExceptionTest {
+	public static void main(String args[]) {
+		try {
+			int num = Integer.parseInt("akki");
+			System.out.println(num);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Work done!");
+	}
+}
+----Work done!
+----java.lang.NumberFormatException: For input string: "akki"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at java.base/java.lang.Integer.parseInt(Unknown Source)
+	at com.javafee.tmp.Main.main(Main.java:4)

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="672.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafee.excsim.controllers.MainFxmlController">
+   <children>
+      <JFXDrawer fx:id="jfxDrawerMenu" defaultDrawerSize="190.0" prefHeight="446.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <TabPane fx:id="tabPane" layoutX="6.0" layoutY="46.0" prefHeight="354.0" prefWidth="702.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="3.6000000000000227" AnchorPane.topAnchor="44.60000000000002">
+        <tabs>
+          <Tab text="%main.tabPane.tabExceptions">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="697.0">
+              			<children>
+				<fx:include maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" source="exception/ExceptionPane.fxml" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+			</children>
+              </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="%main.tabPane.tabValidations">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              
+              			<children>
+				<fx:include maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" source="validation/ValidationPane.fxml" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+			</children>              </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label alignment="CENTER" layoutX="33.0" layoutY="489.0" prefHeight="18.0" prefWidth="724.0" text="%main.labelSysInfo" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="33.0" />
+      <JFXHamburger fx:id="jfxHamburger" layoutX="667.0" layoutY="14.0" AnchorPane.rightAnchor="14.600000000000001" AnchorPane.topAnchor="14.0" />
+   </children>
+</AnchorPane>

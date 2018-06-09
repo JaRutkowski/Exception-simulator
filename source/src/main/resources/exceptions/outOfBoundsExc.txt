@@ -1,0 +1,22 @@
+public class ArrayIndexOutOfBoundExceptionTest {
+	public static void main(String args[]) {
+		int num[] = { 1, 2, 3, 4 };
+		System.out.println(num[5]);
+	}
+}
+----Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
+	at ArrayIndexOutOfBoundExceptionTest.main(NullPointerTest.java:4)
+----public class ArrayIndexOutOfBoundExceptionTest {
+	public static void main(String args[]) {
+		int num[] = { 1, 2, 3, 4 };
+		try {
+			System.out.println(num[5]);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Table processed!");
+	}
+}
+----Table processed!
+----java.lang.ArrayIndexOutOfBoundsException: 5
+	at ArrayIndexOutOfBoundExceptionTest.main(NullPointerTest.java:5)

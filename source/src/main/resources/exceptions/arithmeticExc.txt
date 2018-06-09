@@ -1,0 +1,24 @@
+public class ArithmeticExceptionTest {
+	public static void main(String args[]) {
+		int a = 30, b = 0;
+		int c = a / b;
+		System.out.println("Can't divide a number by 0");
+	}
+}
+----Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at ArithmeticExceptionTest.main(Main.java:4)
+----public class ArithmeticExceptionTest {
+	public static void main(String args[]) {
+		try {
+			int a = 30, b = 0;
+			int c = a / b;
+			System.out.println("Result = " + c);
+		} catch (ArithmeticException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Work done!");
+	}
+}
+----Work done!
+----Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at ArithmeticExceptionTest.main(Main.java:5)

@@ -1,0 +1,23 @@
+public class NullPointerTest {
+	public static void main(String[] args) {
+		Integer a = null;
+		a.intValue();
+	}
+}
+----Exception in thread "main" java.lang.NullPointerException
+	at NullPointerTest.main(NullPointerTest.java:4)
+----public class NullPointerTest {
+	public static void main(String[] args) {
+		try {
+			Integer a = null;
+			a.intValue();
+			System.out.println("Done!");
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
+		System.out.println("The end!");
+	}
+}
+----The end!
+----java.lang.NullPointerException
+	at com.javafee.test.model.NullPointerTest.main(NullPointerTest.java:5)

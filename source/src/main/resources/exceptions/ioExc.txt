@@ -1,0 +1,33 @@
+public class IOExceptionTest {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = null;
+		br = new BufferedReader(new FileReader(new File("file.txt")));
+		br.readLine();
+		System.out.println("File reading done");
+	}
+}
+----Exception in thread "main" java.io.FileNotFoundException: file.txt (Nie można odnaleźć określonego pliku)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileReader.<init>(FileReader.java:72)
+	at IOExceptionTest.main(NullPointerTest.java:4)
+----public class IOException {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(new File("file.txt")));
+			br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Work done!");
+	}
+}
+----Work done!
+----java.io.FileNotFoundException: file.txt (Nie można odnaleźć określonego pliku)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileReader.<init>(FileReader.java:72)
+	at IOExceptionTest.main(NullPointerTest.java:5)

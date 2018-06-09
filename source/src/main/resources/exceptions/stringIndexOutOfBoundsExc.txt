@@ -1,0 +1,28 @@
+public class ArithmeticExceptionTest {
+	public static void main(String args[]) {
+		String a = "This is like chipping ";
+		char c = a.charAt(24);
+		System.out.println(c);
+	}
+}
+----Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 24
+	at java.base/java.lang.StringLatin1.charAt(Unknown Source)
+	at java.base/java.lang.String.charAt(Unknown Source)
+	at StringIndexOutOfBoundTest.main(Main.java:4)
+----public class StringIndexOutOfBoundTest {
+		public static void main(String args[]) {
+		try {
+			String a = "This is like chipping ";
+			char c = a.charAt(24);
+			System.out.println(c);
+		} catch (StringIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Work done!");
+	}
+}
+----Work done!
+----java.lang.StringIndexOutOfBoundsException: String index out of range: 24
+	at java.base/java.lang.StringLatin1.charAt(Unknown Source)
+	at java.base/java.lang.String.charAt(Unknown Source)
+	at StringIndexOutOfBoundTest.main(Main.java:5)
